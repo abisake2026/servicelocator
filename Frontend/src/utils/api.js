@@ -3,7 +3,8 @@
  * All fetch calls go through here so the base URL is defined in one place.
  */
 
-const BASE = '/api';
+const API_URL = import.meta.env.VITE_API_URL || "http://localhost:8000";
+const BASE = `${API_URL}/api`;
 
 async function request(path, options = {}) {
   const url = `${BASE}${path}`;
