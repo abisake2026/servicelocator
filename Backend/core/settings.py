@@ -71,9 +71,15 @@ REST_FRAMEWORK = {
 }
 
 CORS_ALLOWED_ORIGINS = config(
-    'CORS_ALLOWED_ORIGINS',
-    default='http://localhost:5173,http://localhost:3000',
-).split(',')
+    "CORS_ALLOWED_ORIGINS",
+    default="http://localhost:5173,http://localhost:3000,https://servicelocator-two.vercel.app,https://servicelocator-git-main-syjivan.vercel.app,https://servicelocator-bygltp7py-syjivan.vercel.app",
+).split(",")
+CSRF_TRUSTED_ORIGINS = [
+    "https://servicelocator-two.vercel.app",
+    "https://servicelocator-git-main-syjivan.vercel.app",
+    "https://servicelocator-bygltp7py-syjivan.vercel.app",
+]
+
 CORS_ALLOW_ALL_ORIGINS = config('CORS_ALLOW_ALL_ORIGINS', default=False, cast=bool)
 CORS_ALLOW_METHODS = ['DELETE', 'GET', 'OPTIONS', 'PATCH', 'POST', 'PUT']
 CORS_ALLOW_HEADERS = ['accept', 'accept-encoding', 'authorization', 'content-type', 'origin', 'x-requested-with']
